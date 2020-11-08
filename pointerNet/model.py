@@ -189,7 +189,7 @@ class Decoder(nn.Module):
 
     def lstm_step(self, x, hidden):
         """single lstm cell forward"""
-        
+
         h, c = hidden
 
         gates_cells = self.input2hidden(x) + self.hidden2hidden(hidden)
