@@ -3,6 +3,18 @@ import torch.nn as nn
 from torch.nn import Parameter
 from utils import Vocab, Tags
 
+"""
+Some non-normal BiLSTM_CRF model where
+    * the loss represented as nll
+    * no mask operation introduced for batch calculation
+    * and others
+
+Suggested reference as:
+    * Tensorflow offical `CRF` realization
+    * Torch `BiLSTM_CRF` tutorial:
+        https://pytorch.org/tutorials/beginner/nlp/advanced_tutorial.html
+
+"""
 
 class BiLSTM_CRF(nn.Module):
     def __init__(self, vocab, tags, embed_dim, hidden_dim, batch_size):
